@@ -1,0 +1,4 @@
+vendor/
+.env.example
+!cache/.gitkeep
+cache/

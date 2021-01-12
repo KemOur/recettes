@@ -1,0 +1,49 @@
+<p  v-if="!recipes.length" class="text-center mt-9 text-gray-400">
+  Vous n'avez pas encore de recettes dans votre livre de recettes.
+</p>
+
+<div
+  class="bg-white shadow overflow-hidden sm:rounded-lg mt-9"
+  v-for="recipe in recipes"
+>
+  <div class="px-4 py-5 sm:px-6">
+    <h3 class="text-lg leading-6 font-medium text-gray-900">
+      {{ recipe.name }}
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash float-right text-red-600" viewBox="0 0 16 16"
+           @click.prevent="deleteRecipe(recipe.id)"
+      >
+        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+      </svg>
+    </h3>
+  </div>
+
+  <div class="border-t border-gray-200">
+    <dl>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Ingrédients</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          {{ recipe.ingredients }}
+        </dd>
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Préparation</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          {{ recipe.preparation }}
+        </dd>
+      </div>
+      <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Temps de préparation</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          {{ recipe.time }} min.
+        </dd>
+      </div>
+      <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">Nombre de personnes</dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+          {{ recipe.people }}
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>

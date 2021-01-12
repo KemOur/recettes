@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recettes</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script defer src="https://unpkg.com/vue@next"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <div class="container mx-auto py-5 px-3">
+      <div class="mt-10 sm:mt-0" id="app">
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+              <h1>Partage ta recette</h1>
+              <img src="undraw_refreshing_beverage_td3r.svg" alt="cook"  style="width: 100%" />
+            </div>
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+            {% include '_partials/form.html' %}
+          </div>
+        </div>
+
+        {% include '_partials/recipe.html' %}
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
